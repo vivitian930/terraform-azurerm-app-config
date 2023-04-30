@@ -25,10 +25,10 @@ resource "azurerm_app_configuration_key" "key_values" {
 resource "azurerm_app_configuration_key" "kv_reference" {
   for_each               = var.key_values_kv_reference
   configuration_store_id = azurerm_app_configuration.appconf.id
-  key                    = each.key.key
+  key                    = each.value.key
   type                   = "vault"
-  label                  = each.key.label
-  vault_key_reference    = each.key.vault_key_reference
+  label                  = each.value.label
+  vault_key_reference    = each.value.vault_key_reference
 
   depends_on = [
     azurerm_role_assignment.appconf_dataowner
