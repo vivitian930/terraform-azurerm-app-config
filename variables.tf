@@ -32,7 +32,7 @@ variable "key_values" {
   App Configuration Key Values:
 
   EOT
-  default     = null
+  default     = {}
 }
 
 variable "key_values_kv_reference" {
@@ -44,7 +44,7 @@ variable "key_values_kv_reference" {
     }
   ))
   description = "key value reference from key vault"
-  default     = null
+  default     = {}
 }
 
 variable "feature_flags" {
@@ -57,5 +57,5 @@ variable "feature_flags" {
     }
   ))
   description = "App Configuration Feature Flags"
-  default     = null
+  default     = {}
 }
